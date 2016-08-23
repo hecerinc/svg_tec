@@ -32,14 +32,14 @@ $(window).on('load', function() {
         onCompleteParams: [this]
       });
     } else {
+      $(this).addClass('active');
       TweenMax.to(this, 1, {
         scale: "10"
       });
       elements.addClass('toHide');
       texts.addClass('toHide');
       bg_obj.addClass('toHide');
-      $(this).removeClass('toHide');
-      return $(this).addClass('active');
+      return $(this).removeClass('toHide');
     }
   });
 });
