@@ -49,7 +49,7 @@ $(window).on('load', function() {
     } else {
       $(this).addClass('active');
       TweenMax.to(this, 0.6, {
-        scale: "10"
+        scale: "11"
       });
       elements.addClass('toHide');
       texts.addClass('toHide');
