@@ -5,17 +5,25 @@ $(window).on('load', function() {
   texts = svg.find('.text');
   bg_obj = svg.find('#bg_obj');
   elements.hover((function() {
-    TweenMax.to(this, 0.2, {
-      scale: "1.1",
-      ease: Power0.easeNone,
-      transformOrigin: "50% 50%"
-    });
+    if ($(this).hasClass('active')) {
+
+    } else {
+      TweenMax.to(this, 0.2, {
+        scale: "1.1",
+        ease: Power0.easeNone,
+        transformOrigin: "50% 50%"
+      });
+    }
   }), function() {
-    TweenMax.to(this, 0.1, {
-      scale: "1",
-      ease: Power0.easeNone,
-      transformOrigin: "50% 50%"
-    });
+    if ($(this).hasClass('active')) {
+
+    } else {
+      TweenMax.to(this, 0.1, {
+        scale: "1",
+        ease: Power0.easeNone,
+        transformOrigin: "50% 50%"
+      });
+    }
   });
   return elements.on('click', function() {
     var resetAll;
