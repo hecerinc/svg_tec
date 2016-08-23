@@ -26,28 +26,39 @@ $(window).on('load', function() {
     }
   });
   return elements.on('click', function() {
-    var resetAll;
-    resetAll = function(el) {
+    var div, resetAll;
+    div = $(this).attr('id');
+    div = div.replace('circle_', '');
+    div = $('.' + div);
+    resetAll = function(el, cont) {
       elements.removeClass('toHide');
       texts.removeClass('toHide');
       bg_obj.removeClass('toHide');
       return $(el).removeClass('active');
     };
     if ($(this).hasClass('active')) {
+      TweenMax.to(div, 0.2, {
+        autoAlpha: 0,
+        display: 'none'
+      });
       return TweenMax.to(this, 0.3, {
         scale: "1",
         onComplete: resetAll,
-        onCompleteParams: [this]
+        onCompleteParams: [this, div]
       });
     } else {
       $(this).addClass('active');
-      TweenMax.to(this, 1, {
+      TweenMax.to(this, 0.6, {
         scale: "10"
       });
       elements.addClass('toHide');
       texts.addClass('toHide');
       bg_obj.addClass('toHide');
-      return $(this).removeClass('toHide');
+      $(this).removeClass('toHide');
+      return TweenMax.to(div, 0.8, {
+        autoAlpha: 1,
+        display: 'block'
+      });
     }
   });
 });
