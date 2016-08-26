@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Titillium Web"), local("TitilliumWeb-Regular"), url(https://fonts.gstatic.com/s/titilliumweb/v4/7XUFZ5tgS-tD6QamInJTcSo_WB_cotcEMUw1LsIE8mM.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Titillium Web"), local("TitilliumWeb-Regular"), url(https://fonts.gstatic.com/s/titilliumweb/v4/7XUFZ5tgS-tD6QamInJTcZSnX671uNZIV63UdXh3Mg0.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 html, body, object {
   width: 100%;
   height: 100%;
@@ -7,15 +23,96 @@ html, body, object {
 .all {
   width: 100%;
   height: auto;
+  z-index: 10;
+  position: relative;
 }
 
 #all {
   width: 100%;
   height: 100%;
+  position: absolute;
+  z-index: 1;
 }
 
 .toHide {
   visibility: hidden;
+}
+
+.nino_container {
+  position: absolute;
+  transform-origin: 50% 50%;
+  background-color: #10764c;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  display: none;
+  opacity: 0;
+}
+
+.nino_content {
+  pointer-events: none;
+  position: absolute;
+  width: 45%;
+  height: 100%;
+  overflow: hidden;
+  padding-right: 5%;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.nino_content .nino_g {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nino_content p {
+  pointer-events: none;
+  font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.nino_content .nino_title1 {
+  color: white;
+  opacity: 0.4;
+  font-weight: 300;
+  font-size: 7vh;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-top: 20vh;
+}
+
+.nino_content .nino_title2 {
+  color: white;
+  text-align: center;
+  margin-top: 1vh;
+  padding-top: 0;
+  font-weight: 200;
+  font-size: 3vh;
+}
+
+.nino_content .nino_subtitle {
+  color: #15db34;
+  font-weight: 600;
+  font-size: 3vh;
+  margin-top: 5vh;
+  text-align: center;
+}
+
+.nino_content .nino_text {
+  color: white;
+  font-weight: 200;
+  font-size: 1.95vh;
+  margin-top: 5vh;
+  text-align: justify;
 }
 
 .circle_content {
@@ -27,6 +124,7 @@ html, body, object {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 2;
 }
 
 .circle_content p.title {
@@ -43,10 +141,10 @@ html, body, object {
   padding-bottom: 0;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: 'Arial';
+  font-family: 'Titillium Web', sans-serif;
   font-weight: 400;
   color: white;
-  opacity: 0.3;
+  opacity: 0.4;
   font-size: 62px;
 }
 
@@ -64,7 +162,7 @@ html, body, object {
   margin-top: 0;
   margin-bottom: 0;
   text-align: center;
-  font-family: 'Arial';
+  font-family: 'Titillium Web', sans-serif;
   font-weight: 200;
   color: white;
   font-size: 22px;
@@ -76,10 +174,15 @@ svg, object {
   height: auto;
 }
 
-.element {
+.element, #nino {
   cursor: pointer;
 }
 
 .text {
   pointer-events: none;
+}
+
+#nino {
+  position: absolute;
+  z-index: 10;
 }
