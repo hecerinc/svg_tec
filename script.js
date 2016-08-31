@@ -95,7 +95,7 @@ $(window).on('load', function() {
       for (index = j = 0, len = elem.length; j < len; index = ++j) {
         i = elem[index];
         numb = index + 1;
-        time = (index * 10) + 0.2;
+        time = (index * 10) + 1.2;
         TweenMax.to(".nino_g" + numb, 0.3, {
           autoAlpha: 1,
           display: "block",
