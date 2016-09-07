@@ -96,13 +96,13 @@ html, body, object {
   margin-top: 1vh;
   padding-top: 0;
   font-weight: 200;
-  font-size: 3vh;
+  font-size: 1.5rem;
 }
 
 .nino_content .nino_subtitle {
   color: #15db34;
   font-weight: 600;
-  font-size: 3vh;
+  font-size: 2rem;
   margin-top: 5vh;
   text-align: center;
 }
@@ -110,7 +110,7 @@ html, body, object {
 .nino_content .nino_text {
   color: white;
   font-weight: 200;
-  font-size: 1.95vh;
+  font-size: 1rem;
   margin-top: 5vh;
   text-align: justify;
 }
