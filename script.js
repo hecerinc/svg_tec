@@ -1,3 +1,4 @@
+var indice = 1;
 $(window).on('load', function() {
   var bg_obj, bg_white, elements, ipal, nino, svg, texts;
   svg = $('object').contents();
@@ -92,21 +93,22 @@ $(window).on('load', function() {
         display: "block"
       });
       elem = $(".nino_g");
-      for (index = j = 0, len = elem.length; j < len; index = ++j) {
-        i = elem[index];
-        numb = index + 1;
-        time = (index * 10) + 1.2;
-        TweenMax.to(".nino_g" + numb, 0.3, {
-          autoAlpha: 1,
-          display: "block",
-          delay: time
-        });
-        TweenMax.to(".nino_g" + numb, 0.2, {
-          autoAlpha: 0,
-          display: "none",
-          delay: numb * 10
-        });
-      }
+      $('.nino_g1').css('opacity', 1);
+      // for (index = j = 0, len = elem.length; j < len; index = ++j) {
+      //   i = elem[index];
+      //   numb = index + 1;
+      //   time = (index * 10) + 1.2;
+      //   TweenMax.to(".nino_g" + numb, 0.3, {
+      //     autoAlpha: 1,
+      //     display: "block",
+      //     delay: time
+      //   });
+      //   TweenMax.to(".nino_g" + numb, 0.2, {
+      //     autoAlpha: 0,
+      //     display: "none",
+      //     delay: numb * 10
+      //   });
+      // }
       elements.addClass('toHide');
       texts.addClass('toHide');
       bg_obj.addClass('toHide');
@@ -145,7 +147,6 @@ $(window).on('load', function() {
       bg_obj.addClass('toHide');
       nino.addClass('toHide');
       $(this).removeClass('toHide');
-      console.log(div);
       return TweenMax.to(div, 0.8, {
         autoAlpha: 1,
         display: 'block'
@@ -154,3 +155,24 @@ $(window).on('load', function() {
   });
 });
 
+$(function(){
+  $('a.btn.next').click(function(){
+    $('.nino_g'+indice).animate({opacity: 0}, function(){
+      $(this).hide();
+      $('.nino_g'+(indice+1)).animate({opacity: 1}).show();
+      indice++;
+      indice %= 10;
+      if(indice == 0)
+        indice = 1;
+    });
+  });
+  $('a.btn.prev').click(function(){
+    if(indice == 1)
+      return;
+    $('.nino_g'+indice).animate({opacity: 0}, function(){
+      $(this).hide();
+      $('.nino_g'+(indice-1)).animate({opacity: 1}).show();
+      indice--;
+    });
+  });
+});

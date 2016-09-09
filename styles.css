@@ -52,7 +52,7 @@ html, body, object {
 }
 
 .nino_content {
-  pointer-events: none;
+  /*pointer-events: none;*/
   position: absolute;
   width: 45%;
   height: 100%;
@@ -69,11 +69,11 @@ html, body, object {
   height: auto;
   overflow: hidden;
   opacity: 0;
-  pointer-events: none;
+  /*pointer-events: none;*/
 }
 
 .nino_content p {
-  pointer-events: none;
+  /*pointer-events: none;*/
   font-family: 'Titillium Web', sans-serif;
   margin: 0;
   padding: 0;
@@ -123,7 +123,7 @@ html, body, object {
   top: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  /*pointer-events: none;*/
   z-index: 2;
 }
 
@@ -172,6 +172,8 @@ svg, object {
   overflow: visible;
   width: 100%;
   height: auto;
+  z-index: 1;
+  position: relative;
 }
 
 .element, #nino {
@@ -179,7 +181,7 @@ svg, object {
 }
 
 .text {
-  pointer-events: none;
+  /*pointer-events: none;*/
 }
 
 #nino {
@@ -194,4 +196,18 @@ svg, object {
 
 #bg_obj {
   cursor: pointer;
+}
+
+a.btn{
+  position: absolute;
+  top: 55%;
+  color: white;
+  font-size: 2rem;
+  z-index: 999;
+}
+a.btn.prev{
+  left: 47%;
+}
+a.btn.next{
+  right: 2%;
 }
