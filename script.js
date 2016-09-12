@@ -78,6 +78,8 @@ $(window).on('load', function() {
         onComplete: hideKid,
         onCompleteParams: [nino]
       });
+      indice = 1;
+      $('a.btn').css('display', '');
     } else {
       $(nino).addClass('active');
       TweenMax.to(nino, 0.3, {
@@ -85,6 +87,10 @@ $(window).on('load', function() {
         position: "absolute",
         xPercent: -150,
         yPercent: -10
+      });
+      TweenMax.to(".nino_g", 0.2, {
+        display: "block",
+        visibility: "visible"
       });
       TweenMax.to(".nino_container", 0.3, {
         width: "100%",
@@ -94,6 +100,7 @@ $(window).on('load', function() {
       });
       elem = $(".nino_g");
       $('.nino_g1').css('opacity', 1);
+      $('a.btn').css('display', 'block');
       // for (index = j = 0, len = elem.length; j < len; index = ++j) {
       //   i = elem[index];
       //   numb = index + 1;
