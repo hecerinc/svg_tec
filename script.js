@@ -166,11 +166,9 @@ $(function(){
   $('a.btn.next').click(function(){
     $('.nino_g'+indice).animate({opacity: 0}, function(){
       $(this).hide();
+      indice %= 9;
       $('.nino_g'+(indice+1)).animate({opacity: 1}).show();
       indice++;
-      indice %= 10;
-      if(indice == 0)
-        indice = 1;
     });
   });
   $('a.btn.prev').click(function(){
